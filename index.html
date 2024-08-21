@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Category filter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="main">
+
+        <header class="header">
+            <div class="header-inner">
+                <div class="navigation-site-logo-inner">
+                    <button class="burger-menu" onclick="openMenu()">
+                        <img class="burger-menu-img" src="images/Menu-open.svg" alt="">
+                    </button>
+                    <nav class="navigation">
+                        <ul class="navigation-inner">
+                            <li class="menu-list">
+                                <a class="menu-link" href="">Needs</a>
+                            </li>
+                            <li class="menu-list">
+                                <a class="menu-link" href="">Price List</a>
+                            </li>
+                            <li class="menu-list dropdown">
+                                <a class="menu-link" href="">Treatments</a>
+                                <button class="dropdown-menu-btn" onclick="openSubMenu()">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.0777 17.8461L3.88897 10.6574C3.22972 9.99813 3.22972 8.91963 3.88897 8.26113L4.48897 7.66038C5.14672 7.00188 6.22597 7.00188 6.88447 7.66038L12.3707 13.1466L17.8577 7.66038C18.5162 7.00188 19.5955 7.00188 20.2532 7.66038L20.8532 8.26113C21.5125 8.91963 21.5125 9.99813 20.8532 10.6574L13.663 17.8461C13.3097 18.2001 12.835 18.3576 12.3707 18.3314C11.9065 18.3576 11.4325 18.2001 11.0777 17.8461Z"
+                                            fill="white"></path>
+                                    </svg>
+                                </button>
+                                <ul class="sub-menu">
+                                    <li class="sub-menu-list">
+                                        <a class="sub-menu-link" href="">Needs</a>
+                                    </li>
+                                    <li class="sub-menu-list">
+                                        <a class="sub-menu-link" href="">Price List</a>
+                                    </li>
+                                    <li class="sub-menu-list">
+                                        <a class="sub-menu-link" href="">Treatments</a>
+                                    </li>
+                                    <li class="sub-menu-list">
+                                        <a class="sub-menu-link" href="">Surgical</a>
+                                    </li>
+                                    <li class="sub-menu-list">
+                                        <a class="sub-menu-link" href="">Dental</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-list">
+                                <a class="menu-link" href="">Surgical</a>
+                            </li>
+                            <li class="menu-list">
+                                <a class="menu-link" href="">Dental</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a class="site-logo-link" href="">
+                        <img src="images/site-logo.svg" alt="">
+                    </a>
+                    <div class="mobile-search">
+                        <a class="book-now" href="">Book Now</a>
+                        <button class="search-btn" onclick="openSearch()">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11" cy="11" r="7" stroke="white" stroke-width="2" />
+                                <path d="M20 20L17 17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <a class="contact-phone" href="tel:+374 44 007171">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="6" y="3" width="12" height="18" rx="2" stroke="white" stroke-width="1.2" />
+                        <path
+                            d="M9 3V3C9 3.46499 9 3.69748 9.05111 3.88823C9.18981 4.40587 9.59413 4.81019 10.1118 4.94889C10.3025 5 10.535 5 11 5H13C13.465 5 13.6975 5 13.8882 4.94889C14.4059 4.81019 14.8102 4.40587 14.9489 3.88823C15 3.69748 15 3.46499 15 3V3"
+                            stroke="white" stroke-width="1.2" />
+                        <circle cx="12" cy="18" r="1" fill="white" />
+                    </svg>
+                    +374 44 007171
+                </a>
+            </div>
+            <div class="search-inner">
+                <div class="search-intro">
+                    <p class="choose-your-appointment">Choose Your Appointment</p>
+                    <div class="search-container">
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11.6104" cy="11" r="6" stroke="#010114" stroke-width="1.2" />
+                            <path d="M20.6104 20L17.6104 17" stroke="#010114" stroke-width="1.2"
+                                stroke-linecap="round" />
+                        </svg>
+                        <input class="input-search" type="search" name="" id="" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <h2 class="title">Schedule an Appointment</h2>
+            <div class="main-category-block" id="deep">
+                <ul class="active" data-level="1">
+                    <li class="category-btn"
+                        data-sub='[{"Injection": [{"Dermal Filler Injections": [{"name": "Face Fillers", "id": 286}, {"name": "Filler Dissolving (hyaluronidase)", "id": 317}, {"name": "Body Fillers", "id": 58}]}, {"Botulinum Toxin": [{"name": "Botox for face", "id": 241}, {"name": "Sweat Reduction", "id": 158}]}, {"Mesotherapy": [{"name": "Mesotherapy", "id": 246}, {"name": "Mesobotox", "id": 244}, {"name": "Cherry Lips", "id": 323}, {"name": "Skinboosters", "id": 245}]}, {"PRP": [{"name": "Hair PRP", "id": 367}, {"name": "Face &amp; Neck PRP", "id": 368}]}, {"name": "Fat Burner injection", "id": 124}]}, {"Devices": [{"name": "Genius RF Microneedling", "id": 373}, {"name": "Hollywood Spectra", "id": 329}, {"name": "Sofwave", "id": 6}]}, {"Skin treatment": [{"name": "Acne", "id": 185}, {"name": "Pigmentation treatment", "id": 371}, {"name": "Cellulite", "id": 175}, {"name": "Tattoo removal", "id": 140}, {"name": "Stretch marks removal", "id": 141}]}, {"name": "IV Drips", "id": 18}, {"name": "Doctor Consultation", "id": 365}]'
+                        data-name="Aesthetic &amp; Anti-aging">Aesthetic &amp; Anti-aging</li>
+                    <li class="category-btn"
+                        data-sub='[{"Laser Hair Removal": [{"name": "Men", "id": 336}, {"name": "Women", "id": 337}]}, {"Skin treatment": [{"Skin Care &amp; Facial": [{"name": "Mirapeel Hydrating Facial", "id": 277}, {"name": "Dermapen Microneedling", "id": 369}]}, {"Peeling": [{"name": "Pigmentation", "id": 370}, {"name": "Hollywood (Carbon) Peel", "id": 208}]}, {"Devices": [{"name": "Clarity 2", "id": 372}, {"name": "Hollywood Spectra", "id": 374}, {"name": "Sofwave", "id": 375}, {"name": "Genius RF Microneedling", "id": 7}]}]}, {"PRP": [{"name": "PRP Face &amp; Neck", "id": 326}, {"name": "PRP Hair", "id": 67}]}, {"name": "Hardware Cosmetology Consultation", "id": 366}]'
+                        data-name="Hardware Cosmetology">Hardware Cosmetology</li>
+                    <li class="category-btn"
+                        data-sub='[{"Facial Surgery Consultations": [{"name": "Face Lift", "id": 191}, {"name": "Eyelid and Peri-Orbital Surgery", "id": 347}, {"name": "Nose Surgery (Rhinoplasty)", "id": 224}, {"name": "Ear surgery (Otoplasty)", "id": 216}]}, {"Body Surgery Consultation": [{"name": "MIA procedure for Breast", "id": 255}, {"name": "Body Contouring Consultation", "id": 350}, {"name": "Liposuction", "id": 35}, {"name": "Mommy Makeover Consultation", "id": 237}, {"name": "Breast Surgery Consultation", "id": 234}]}, {"Skin - Dermatology Surgery": [{"name": "Lipoma Surgery", "id": 355}, {"name": "Cyst Removal", "id": 164}, {"name": "Mole Removal", "id": 165}]}, {"name": "Post-Op Consultation", "id": 345}]'
+                        data-name="Plastic Surgery">Plastic Surgery</li>
+                    <li class="category-btn"
+                        data-sub='[{"Aesthetic Dental treatments": [{"name": "Aligners", "id": 360}, {"name": "Whitening", "id": 359}, {"name": "Veneers", "id": 361}, {"name": "Cleansing &amp; polishing", "id": 358}]}, {"name": "CBCT Scan (Cone Beam CT)", "id": 309}, {"name": "Dental Consultation", "id": 356}, {"name": "Holistic Dentistry Consutlation", "id": 357}]'
+                        data-name="Dental">Dental</li>
+                    <li class="category-btn" data-sub='[{"name": "Doctor Consultation", "id": 64}]'
+                        data-name="Hair Transplant">
+                        Hair Transplant</li>
+                    <li class="category-btn"
+                        data-sub='[{"Aesthetic Dental treatments": [{"name": "Aligners", "id": 360}, {"name": "Whitening", "id": 359}, {"name": "Veneers", "id": 361}, {"name": "Cleansing &amp; polishing", "id": 358}]}, {"name": "CBCT Scan (Cone Beam CT)", "id": 309}, {"name": "Dental Consultation", "id": 356}, {"name": "Holistic Dentistry Consutlation", "id": 357}]'
+                        data-name="Dental">Dental</li>
+                </ul>
+                <div class="category-image" id="category-image">
+                    <img class="category-photo" loading="lazy" src="images/category-img.webp" alt="category image" />
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
